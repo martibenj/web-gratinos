@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="@layout/shape_black_border"
+    android:orientation="vertical"
+    tools:context=".ShowGratinStatus" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/sgs_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@layout/shape_vert_dark_border"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/sgs_label"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/sgs_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center_horizontal"
+            android:text=""
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/sgs_img_context"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/sgs_nelson"
+            android:cropToPadding="true"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+</LinearLayout>

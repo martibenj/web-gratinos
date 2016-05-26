@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blueSky">#3790F8</color>
+    <color name="blueDarkSky">#096FEC</color>
+    <color name="textGray">#C0DDF6</color>
+    <color name="textGrayDark">#155895</color>
+    <color name="orange">#ffff8800</color>
+    <color name="orangeLight">#ffffBE7D</color>
+    <color name="vert">#06C47C</color>
+    <color name="vertLight">#06C45C</color>
+    <color name="white">#FFFFFF</color>
+
+</resources>

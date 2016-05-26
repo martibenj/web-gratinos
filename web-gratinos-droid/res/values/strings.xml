@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App -->
+    <string name="app_name">WebGratinosAndroid</string>
+    <string name="menu_settings">Settings</string>
+    <!-- Fonc -->
+    <string name="sgs_label">Etat d\'El Gratinos dans le frigo</string>
+    <string name="gratin_ok">En Stock !</string>
+    <string name="gratin_ko">Trop tard&#8230;</string>
+    <string name="gratin_unknown">On dirait que le Raspi fait dodo..</string>
+    <string name="sgs_nelson">AH AH!</string>
+
+</resources>
