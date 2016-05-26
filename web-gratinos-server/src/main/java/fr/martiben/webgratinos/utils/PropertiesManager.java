@@ -15,7 +15,7 @@ public class PropertiesManager {
 
     /**
      * Lecture générique d'un fichier de Properties
-     * 
+     *
      * @return Les Properties du fichier
      */
     public static Properties readPropertiesFile(String pFile) {
@@ -30,11 +30,9 @@ public class PropertiesManager {
 
     /**
      * Recherche d'un property.
-     * 
-     * @param pFilePath
-     *            Chemin du fichier de valeurs simples
-     * @param pNomProperty
-     *            le nom de la property recherchée
+     *
+     * @param pFilePath    Chemin du fichier de valeurs simples
+     * @param pNomProperty le nom de la property recherchée
      * @return la property ou null si introuvable
      */
     public static String readPropertyFromFile(String pFilePath, String pNomProperty) {
@@ -43,11 +41,9 @@ public class PropertiesManager {
 
     /**
      * Ecriture d'un fichier de properties.
-     * 
-     * @param pFile
-     *            chemin du fichier de props
-     * @param pProps
-     *            Properties à enregistrer
+     *
+     * @param pFile  chemin du fichier de props
+     * @param pProps Properties à enregistrer
      */
     public static void writeProperties(String pFile, Properties pProps) {
         final URL ressource = PropertiesManager.class.getClassLoader().getResource(pFile);

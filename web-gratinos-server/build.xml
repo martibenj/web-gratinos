@@ -3,7 +3,7 @@
     <target name="create_run_jar">
         <jar destfile="./dist/webGratinosPublisher.jar" filesetmanifest="mergewithoutmain">
             <manifest>
-                <attribute name="Main-Class" value="fr.martiben.webgratinos.publish.WebGratinosPublisher"/>
+                <attribute name="Main-Class" value="martiben.webgratinos.publish.WebGratinosPublisher"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="./bin"/>

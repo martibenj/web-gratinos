@@ -1,13 +1,5 @@
 package fr.martiben.webgratinos;
 
-import java.io.IOException;
-
-import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;
-import org.xmlpull.v1.XmlPullParserException;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +8,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import fr.martiben.webgratinos.utils.Utilitaires;
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 
 public class ShowGratinStatus extends Activity {
 
@@ -25,28 +24,28 @@ public class ShowGratinStatus extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_gratin_status);
+        setContentView(fr.martiben.webgratinos.R.layout.activity_show_gratin_status);
         initGUI();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_show_gratin_status, menu);
+        getMenuInflater().inflate(fr.martiben.webgratinos.R.menu.activity_show_gratin_status, menu);
         return true;
     }
 
     /** Init GUI elements. */
     private void initGUI() {
-        ((ImageButton) findViewById(R.id.sgs_img_context)).setVisibility(View.INVISIBLE);
+        ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setVisibility(View.INVISIBLE);
         new CallURLInBackground().execute((Void) null, (Void) null, (Void) null);
     }
 
     /**
      * Inner Class d'accès au web de manière asynchrone par rapport à l'UI.
-     * 
-     * @see http://android-developers.blogspot.fr/2009/05/painless-threading.html
-     * @see http://techtej.blogspot.fr/2011/03/android-thread-constructs-part-3.html
+     *
      * @author martinelli-b
+     * @link http://android-developers.blogspot.fr/2009/05/painless-threading.html
+     * @link http://techtej.blogspot.fr/2011/03/android-thread-constructs-part-3.html
      */
     private class CallURLInBackground extends AsyncTask<Void, Void, Boolean> {
         private static final String SOAP_ACTION = "http://srv.webgratinos.martiben.fr/isGratinDispo";
@@ -57,9 +56,8 @@ public class ShowGratinStatus extends Activity {
 
         /**
          * Appel au WebServiceGratinos
-         * 
-         * @param pVoids
-         *            Rien !
+         *
+         * @param pVoids Rien !
          * @return Retour de l'appel HTTP
          */
         @Override
@@ -91,24 +89,23 @@ public class ShowGratinStatus extends Activity {
 
         /**
          * Après la recupération de la requête HTTP, affichage du resultat.
-         * 
-         * @param pRapportTechnique
-         *            Résultat à afficher
+         *
+         * @param pStatusGratin Résultat à afficher
          */
         protected void onPostExecute(Boolean pStatusGratin) {
-            TextView gratinStatus = (TextView) findViewById(R.id.sgs_status);
+            TextView gratinStatus = (TextView) findViewById(fr.martiben.webgratinos.R.id.sgs_status);
             if (pStatusGratin == null) {
-                ((ImageButton) findViewById(R.id.sgs_img_context)).setImageResource(R.drawable.chan);
-                ((ImageButton) findViewById(R.id.sgs_img_context)).setVisibility(View.VISIBLE);
-                gratinStatus.setText(getApplicationContext().getString(R.string.gratin_unknown));
+                ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setImageResource(fr.martiben.webgratinos.R.drawable.chan);
+                ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setVisibility(View.VISIBLE);
+                gratinStatus.setText(getApplicationContext().getString(fr.martiben.webgratinos.R.string.gratin_unknown));
             } else if (pStatusGratin) {
-                ((ImageButton) findViewById(R.id.sgs_img_context)).setImageResource(R.drawable.ash);
-                ((ImageButton) findViewById(R.id.sgs_img_context)).setVisibility(View.VISIBLE);
-                gratinStatus.setText(getApplicationContext().getString(R.string.gratin_ok));
+                ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setImageResource(fr.martiben.webgratinos.R.drawable.ash);
+                ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setVisibility(View.VISIBLE);
+                gratinStatus.setText(getApplicationContext().getString(fr.martiben.webgratinos.R.string.gratin_ok));
             } else {
-                ((ImageButton) findViewById(R.id.sgs_img_context)).setImageResource(R.drawable.nelson);
-                ((ImageButton) findViewById(R.id.sgs_img_context)).setVisibility(View.VISIBLE);
-                gratinStatus.setText(getApplicationContext().getString(R.string.gratin_ko));
+                ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setImageResource(fr.martiben.webgratinos.R.drawable.nelson);
+                ((ImageButton) findViewById(fr.martiben.webgratinos.R.id.sgs_img_context)).setVisibility(View.VISIBLE);
+                gratinStatus.setText(getApplicationContext().getString(fr.martiben.webgratinos.R.string.gratin_ko));
             }
         }
     }

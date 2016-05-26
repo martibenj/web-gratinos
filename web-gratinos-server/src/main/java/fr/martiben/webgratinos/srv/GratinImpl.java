@@ -1,11 +1,10 @@
 package fr.martiben.webgratinos.srv;
 
-import java.util.Properties;
-import java.util.logging.Logger;
+import fr.martiben.webgratinos.utils.PropertiesManager;
 
 import javax.jws.WebService;
-
-import fr.martiben.webgratinos.utils.PropertiesManager;
+import java.util.Properties;
+import java.util.logging.Logger;
 
 @WebService(endpointInterface = "fr.martiben.webgratinos.srv.GratinInterface")
 public class GratinImpl implements GratinInterface {

@@ -10,9 +10,8 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface GratinInterface {
     /**
      * Indique la disponibilité d'un gratin donné.
-     * 
-     * @param pName
-     *            le type de gratin demandé.
+     *
+     * @param pName le type de gratin demandé.
      * @return la disponibilité d'un gratin donné.
      */
     @WebMethod()
@@ -20,11 +19,9 @@ public interface GratinInterface {
 
     /**
      * Change la disponibilité d'un gratin donné.
-     * 
-     * @param pName
-     *            le type de gratin.
-     * @param pValue
-     *            le status du gratin.
+     *
+     * @param pName  le type de gratin.
+     * @param pValue le status du gratin.
      */
     @WebMethod()
     void changeGratinStatus(String pName, Boolean pValue);
